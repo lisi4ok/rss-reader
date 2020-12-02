@@ -1,9 +1,9 @@
 module FeedsHelper
 
-  def get_rss_feed_info(url)
+  def get_rss_feed_info(link)
     require 'rss'
     require 'open-uri'
-    rss = RSS::Parser.parse(open(url).read, false)
+    rss = RSS::Parser.parse(URI.open(link).read, false)
     return {
       title: rss.channel.title,
       link: rss.channel.link,
@@ -11,20 +11,20 @@ module FeedsHelper
     }
   end
 
-  def get_rss_feed_items(url)
+  def get_rss_feed_items(link)
     require 'rss'
     require 'open-uri'
-    rss = RSS::Parser.parse(open(url).read, false).channel.items
-    items = []
+    rss = RSS::Parser.parse(URI.open(link).read, false).channel.items
+    @items = []
     rss.each do |result|
-      items << {
+      @items << {
         title: result.title,
         link: result.link,
         description: result.description,
         date: result.pubDate.strftime("%Y-%m-%d %H:%M:%S")
       }
     end
-    return items
+    return @items
   end
 
 end
