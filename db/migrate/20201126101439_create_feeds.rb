@@ -5,6 +5,7 @@ class CreateFeeds < ActiveRecord::Migration[6.0]
       t.string :link, null: false
       t.string :title, null: false
       t.longtext :description, null: false
+      t.datetime :date, null: true
       t.timestamps
     end
   end
