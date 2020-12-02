@@ -1,0 +1,10 @@
+<h1>Links for Feed - <%= @feed.title %></h1>
+<% @items.each do |item| %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <%= link_to item.title, item %> - <i> published <%= time_ago_in_words(item.date) %> ago.</i>
+    </div>
+  </div>
+<% end %>
+<hr />
+<%= link_to 'Back', feed_path %>

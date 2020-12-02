@@ -1,0 +1,9 @@
+<h3><%= link_to @item.title, @item.link %></h3>
+<div>
+  <i>published on <%= @item.date %></i>
+  <p>
+    <%= @item.description.html_safe %>
+  </p>
+</div>
+<hr />
+<%= link_to 'Back', items_path %>
