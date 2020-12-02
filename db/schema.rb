@@ -13,10 +13,9 @@
 ActiveRecord::Schema.define(version: 2020_11_26_102759) do
 
   create_table "feeds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "url", null: false
     t.string "link", null: false
     t.string "title", null: false
-    t.text "description", null: false
+    t.text "description", size: :long, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
