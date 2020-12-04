@@ -20,6 +20,9 @@ bundle install
 yarn install
 ```
 
+```
+rails server -b 0.0.0.0
+```
 
 ### Migrate and Seed
 
