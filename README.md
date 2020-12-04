@@ -2,9 +2,9 @@
 Ruby on Rails application that reads XML Feeds and Sync it to database.
 
 
-##Installation
+## Installation
 
-###Clone the project
+### Clone the project
 ```
 git clone https://github.com/lisi4ok/rss-reader.git
 cd rss-reader
@@ -42,9 +42,9 @@ rails db:migrate
 rails db:seed
 ```
 
-##Usage
+## Usage
 
-###Sync Feed Items
+### Sync Feed Items
 ```
 rake sync:feeds
 ```
