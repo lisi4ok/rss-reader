@@ -1,24 +1,57 @@
-# README
+# RSS Reader
+Ruby on Rails application that reads XML Feeds and Sync it to database.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+##Installation
 
-* Ruby version
+###Clone the project
+```
+git clone https://github.com/lisi4ok/rss-reader.git
+cd rss-reader
+```
 
-* System dependencies
+```
+bundle update
+yarn update
+```
+or
+```
+bundle install
+yarn install
+```
 
-* Configuration
 
-* Database creation
+### Migrate and Seed
 
-* Database initialization
+Datanase Driver is mysql2!
 
-* How to run the test suite
+Change DB password on:
+```
+__APP_FOLDER_/config/database.yaml
+```
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+```
+rails db:migrate
+```
 
-* ...
+```
+rails db:seed
+```
+
+##Usage
+
+###Sync Feed Items
+```
+rake sync:feeds
+```
+
+### Run Tests
+```
+bundle exec rspec
+```
+
+See Test coverage on:
+```
+file:///__PATH__/rss-reader/coverage/index.html#_AllFiles
+```
